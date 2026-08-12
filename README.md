@@ -55,12 +55,20 @@ cd <your-repository>/live/dev
 
 2. **Export required environment variables**
 
+Create a local `.env` file from the example if you want:
+
+```bash
+cp .env.example .env
+```
+
+Then export secrets from that file or set them directly in your shell:
+
 ```bash
 export GITHUB_TOKEN="your_github_token"
 export GITHUB_WEBHOOK_SECRET="your_webhook_secret"
 ```
 
-> Important: Do not store `GITHUB_TOKEN`, `GITHUB_WEBHOOK_SECRET`, or any other secrets in Git or Terraform files. These values must be provided as environment variables at runtime only.
+> Important: Do not store `GITHUB_TOKEN`, `GITHUB_WEBHOOK_SECRET`, or any other secrets in Git or Terraform files. Use `.env` locally and keep it out of version control.
 
 3. **Preview the changes**
 
