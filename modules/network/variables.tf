@@ -3,11 +3,6 @@ variable "env" {
   type        = string
 }
 
-variable "region" {
-  description = "AWS Region"
-  type        = string
-}
-
 variable "vpc_cidr" {
   description = "CIDR block for the VPC"
   type        = string

@@ -33,8 +33,4 @@ output "public_route_table_id" {
   value       = aws_route_table.public.id
 }
 
-output "eks_nodes_sg_id" {
-  description = "The ID of the EKS nodes security group."
-  value       = aws_security_group.eks_nodes_sg.id
-}
 

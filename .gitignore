@@ -3,4 +3,15 @@
 .terraform.lock.hcl
 *.tfstate
 *.tfstate.backup
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+override.tf
+override.tf.json
+crash.log
 .env
+.vault-token
+.aws/credentials
+application.yaml
+*.pem
+*.key

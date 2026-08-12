@@ -92,29 +92,3 @@ resource "aws_route_table_association" "public_zone" {
   subnet_id      = aws_subnet.public_zone[count.index].id
   route_table_id = aws_route_table.public.id
 }
-
-resource "aws_security_group" "eks_nodes_sg" {
-  name        = "${var.env}-eks-nodes-sg"
-  description = "Allow EKS worker node traffic"
-  vpc_id      = aws_vpc.main.id
-
-  ingress {
-    description = "Allow node-to-node traffic"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    self        = true
-  }
-
-  egress {
-    description = "Allow all outbound traffic"
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "${var.env}-eks-nodes-sg"
-  }
-}
